@@ -1,5 +1,8 @@
 from wand.image import Image
 import os, shutil
+import sys,shutil
+from wand.image import Image
+import string
 
 class DDDmax():
     def __init__(self, filePath, *imageDir) -> None:
