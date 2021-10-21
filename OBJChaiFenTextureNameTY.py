@@ -89,7 +89,10 @@ def mtlChaifen(mtlfile,imagePath):
                             print("文件已存在")
                         else:
                             shutil.copy(imagePath+imagename,imagePath+dicname[imagename])
-                    shutil.copy(imagePath+imagename,imagePath+dicname[imagename])
+                    # try:
+                    #     shutil.copy(imagePath+imagename,imagePath+dicname[imagename])
+                    # except:
+                    #     pass
 
                     #strcontent+='\n'
                 elif 'map_Kd ' in wrlLines[j]:
@@ -156,7 +159,7 @@ def mtlChaifen(mtlfile,imagePath):
                             print("文件已存在")
                         else:
                             shutil.copy(imagePath+imagename,imagePath+dicname[imagename])
-                    shutil.copy(imagePath+imagename,imagePath+dicname[imagename])
+                    # shutil.copy(imagePath+imagename,imagePath+dicname[imagename])
 
                 elif 'map_Kd ' in wrlLines[j]:
                     strname=wrlLines[j]
@@ -201,7 +204,7 @@ def mtlChaifen(mtlfile,imagePath):
     
 def OBJChaiFen(objfile,objfolder,mtlList=""):
     #读取OBJ文件并记录
-    rfile=open(objfile,'r')
+    rfile=open(objfile,'r', encoding='utf-8')
     objLines=rfile.readlines()
     rfile.close()
 
@@ -326,8 +329,8 @@ def OBJoptimization(objfile):
 def OBJSplit():
     #该参数处理用于输入的OBJ文件
    
-    OBJFilePath=r'E:\_ESRI\0824 丝路视觉科技\c04_test_obj\c04_test_obj.obj'
-    imagePath="E:\\_ESRI\\0824 丝路视觉科技\\c04_test_obj\\maps\\"  #贴图地址
+    OBJFilePath=r'D:\Code\Esri_DDDpy\Data\airconditioners\airconditioners.obj'
+    imagePath="D:\\Code\\Esri_DDDpy\\Data\\airconditioners\\maps\\"  #贴图地址
     changeImgae(imagePath, "tga")
 
     imagaSFolder = os.path.abspath(os.path.join(imagePath, "../"))+"\\"
