@@ -215,6 +215,7 @@ def OBJChaiFen(objfile,objfolder,mtlList=""):
     Numlist=[]
     for i in range(0,len(objLines)):
         if objLines[i][0:8]=='# object':
+        # if objLines[i][0:1]=='o ':
             Numlist.append(i)
         if objLines[i][0:6]=='usemtl':
             mtlstring=objLines[i].strip()
@@ -329,8 +330,8 @@ def OBJoptimization(objfile):
 def OBJSplit():
     #该参数处理用于输入的OBJ文件
    
-    OBJFilePath=r'D:\Code\Esri_DDDpy\Data\airconditioners\airconditioners.obj'
-    imagePath="D:\\Code\\Esri_DDDpy\\Data\\airconditioners\\maps\\"  #贴图地址
+    OBJFilePath=r'D:\Code\Esri_DDDpy\\Vray3\\test1.obj'
+    imagePath="D:\\Code\\Esri_DDDpy\\Vray3\\images\\"  #贴图地址
     changeImgae(imagePath, "tga")
 
     imagaSFolder = os.path.abspath(os.path.join(imagePath, "../"))+"\\"
